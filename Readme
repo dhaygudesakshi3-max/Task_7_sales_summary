@@ -1,0 +1,80 @@
+# Task 7 – Basic Sales Summary using SQLite and Python
+
+## Objective
+
+The objective of this project is to connect Python with a SQLite database, execute SQL queries to analyze sales data, and visualize the results using a bar chart with Matplotlib.
+
+## Tools & Technologies
+
+* Python
+* SQLite (`sqlite3`)
+* Pandas
+* Matplotlib
+* Jupyter Notebook
+
+## Project Files
+
+```
+Task-7-SQLite-Sales-Summary/
+│── sales_summary.ipynb
+│── sales_data.db
+│── sales_chart.png
+└── README.md
+```
+
+## Database
+
+A SQLite database named `sales_data.db` was created using Python. It contains a single table named `sales` with the following columns:
+
+* ID
+* Product
+* Quantity
+* Price
+
+Sample sales records were inserted into the table for analysis.
+
+## SQL Query Used
+
+```sql
+SELECT
+    product,
+    SUM(quantity) AS total_qty,
+    SUM(quantity * price) AS revenue
+FROM sales
+GROUP BY product;
+```
+
+## Project Workflow
+
+1. Imported the required Python libraries.
+2. Connected Python to the SQLite database.
+3. Created the `sales` table.
+4. Inserted sample sales records.
+5. Executed SQL queries to calculate:
+
+   * Total Quantity Sold
+   * Total Revenue by Product
+6. Loaded the query results into a Pandas DataFrame.
+7. Displayed the results using print statements.
+8. Created a bar chart to visualize product-wise revenue.
+9. Saved the chart as `sales_chart.png`.
+
+## Output
+
+The project displays:
+
+* Product-wise total quantity sold
+* Product-wise total revenue
+* Revenue bar chart using Matplotlib
+
+## Learning Outcomes
+
+* Connected Python with a SQLite database.
+* Executed SQL queries inside Python.
+* Used the `GROUP BY` clause for data aggregation.
+* Imported SQL query results into Pandas.
+* Created a basic sales visualization using Matplotlib.
+
+## Conclusion
+
+This project demonstrates how SQL and Python can work together for basic sales analysis. It provides practical experience with database connectivity, SQL queries, data manipulation, and visualization, making it a strong foundation for data analytics projects.
